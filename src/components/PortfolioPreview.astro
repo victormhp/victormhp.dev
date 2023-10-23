@@ -12,7 +12,7 @@ const { data } = Astro.props.project;
 ---
 
 <article class="project">
-  <a href={data.deploy_url ?? data.github_url} target="_blank">
+  <a href={data.deploy_url ?? data.github_url} target="_blank" rel="noopener noreferrer">
     <img src={data.img} alt={data.img_alt} loading="lazy" decoding="async" />
   </a>
   <div class="card">
@@ -27,12 +27,12 @@ const { data } = Astro.props.project;
       </div>
     </div>
     <footer class="footer">
-      <a class="link" target="_blank" href={data.github_url}>
+      <a class="link" href={data.github_url} target="_blank" rel="noopener noreferrer">
         <Icon icon="github-logo" />
       </a>
       {
         data.deploy_url ? (
-          <a class="link" target="_blank" href={data.deploy_url}>
+          <a class="link" href={data.deploy_url} target="_blank" rel="noopener noreferrer">
             <Icon icon="arrow-square-out" />
           </a>
         ) : null
