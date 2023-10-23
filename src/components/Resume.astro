@@ -1,0 +1,59 @@
+<a class="resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+  <slot />
+</a>
+
+<style>
+  .resume {
+    border-radius: 0.25rem;
+    border: 2px solid var(--gray-800);
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-light);
+    color: var(--gray-800);
+    box-shadow:
+      0.5px 1px 0 0 var(--gray-800),
+      1.5px 2px 0 0 var(--gray-800),
+      2.5px 3px 0 0 var(--gray-800),
+      3.5px 4px 0 0 var(--gray-800),
+      4.5px 5px 0 0 var(--gray-800),
+      5.5px 6px 0 0 var(--gray-800);
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+    transition: all var(--theme-transition);
+    cursor: pointer;
+    display: inline-block;
+    outline: 2px dashed transparent;
+    position: relative;
+  }
+
+  .resume:hover {
+    background-color: var(--accent-regular);
+    box-shadow:
+      0 0 0 0 var(--black-200),
+      0 0 0 0 var(--black-200),
+      0 0 0 0 var(--black-200),
+      0 0 0 0 var(--black-200),
+      0 0 0 0 var(--black-200),
+      0 0 0 0 var(--black-200);
+    top: 6px;
+    left: 5.5px;
+    transform: rotateX(5deg) rotateY(3deg) rotateZ(0.25deg);
+  }
+
+  .resume:focus-visible {
+    --background: var(--bg-color);
+
+    box-shadow:
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 2px var(--background),
+      0 0 0 4px var(--gray-800);
+    outline: none;
+  }
+</style>
