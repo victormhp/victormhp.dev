@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Home from "../components/Home.astro";
+import About from "../components/About.astro";
+import Work from "../components/Work.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+---
+
+<BaseLayout>
+  <main class="stack gap-20 lg:gap-30">
+    <section class="home wrapper stack gap-8 lg:gap-20">
+      <Home />
+    </section>
+    <section id="about">
+      <About />
+    </section>
+    <section id="work">
+      <Work />
+    </section>
+    <section id="work">
+      <ContactCTA />
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-top: 8rem;
+  }
+
+  .home {
+    min-height: calc(100vh - 8rem);
+  }
+
+  @media (min-width: 64em) {
+    main {
+      padding-top: 0;
+    }
+
+    .home {
+      min-height: 100vh;
+      justify-content: center;
+    }
+  }
+</style>

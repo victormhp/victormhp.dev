@@ -1,0 +1,58 @@
+---
+interface Props {
+  href: string;
+  color?: string;
+}
+
+const { href, color } = Astro.props;
+---
+
+<a class:list={["btn-pressable", color]} {href}>
+  <slot />
+</a>
+<style>
+  .btn-pressable {
+    color: var(--gray-800);
+    border: 2px solid var(--gray-800);
+    font-size: var(--text-md);
+    padding: 0.5rem 1rem;
+    border-radius: 10rem;
+    position: relative;
+    transition:
+      box-shadow 0.35s,
+      top 0.3s,
+      transform 0.45s;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    text-align: center;
+    box-shadow:
+      0 1px 0 0 var(--gray-800),
+      0 2px 0 0 var(--gray-800),
+      0 3px 0 0 var(--gray-800);
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  .btn-pressable:hover {
+    box-shadow:
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800);
+    top: 3px;
+    transform: rotateX(5deg) rotateY(10deg) rotateZ(0.5deg);
+  }
+
+  .btn-pressable:focus-visible {
+    --outline-background: var(--bg-color);
+
+    box-shadow:
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 0 var(--gray-800),
+      0 0 0 2px var(--outline-background),
+      0 0 0 4px var(--gray-800);
+    top: 3px;
+    border: 2px solid var(--gray-800) !important;
+    outline: 0;
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+
+import Subtitle from "../components/Subtitle.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+
+const projects = await getCollection("work");
+---
+
+<div class="wrapper stack gap-4">
+  <Subtitle>Projects</Subtitle>
+  <ul class="stack gap-10 lg:gap-20">
+    {
+      projects.map((project) => (
+        <li>
+          <PortfolioPreview project={project} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
