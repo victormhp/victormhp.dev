@@ -7,7 +7,7 @@ import ContactCTA from "../components/ContactCTA.astro";
 ---
 
 <BaseLayout>
-  <main class="stack gap-20 lg:gap-30">
+  <main class="stack gap-20 lg:gap-20">
     <section class="home wrapper stack gap-8 lg:gap-20">
       <Home />
     </section>
@@ -24,22 +24,8 @@ import ContactCTA from "../components/ContactCTA.astro";
 </BaseLayout>
 
 <style>
-  main {
-    padding-top: 8rem;
-  }
-
   .home {
-    min-height: calc(100vh - 8rem);
-  }
-
-  @media (min-width: 64em) {
-    main {
-      padding-top: 0;
-    }
-
-    .home {
-      min-height: 100vh;
-      justify-content: center;
-    }
+    min-height: 100svh;
+    justify-content: center;
   }
 </style>
