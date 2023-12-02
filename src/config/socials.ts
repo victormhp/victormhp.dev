@@ -5,7 +5,7 @@ export const iconLinks: {
   href: string;
   icon: keyof typeof iconPaths;
 }[] = [
-  { label: "Resume", href: "/", icon: "cv" },
+  { label: "Resume", href: "/resume.pdf", icon: "cv" },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/victormhp/",
