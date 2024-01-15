@@ -4,16 +4,16 @@ import { iconLinks } from "../config/socials";
 import Resume from "./Resume.astro";
 
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
+  { label: "Projects", href: "#projects" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 ---
 
 <nav>
   <div class="menu-header">
-    <a href="/" class="site-title">
+    <a href="#home" class="site-title">
       <Icon icon="terminal-window" color="var(--accent-dark)" size="1.6em" />
        Victor.dev
     </a>

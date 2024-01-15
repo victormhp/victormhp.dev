@@ -3,21 +3,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Home from "../components/Home.astro";
 import About from "../components/About.astro";
 import Work from "../components/Work.astro";
+import Projects from "../components/Projects.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 ---
 
 <BaseLayout>
   <main class="stack gap-20 lg:gap-20">
-    <section class="layout wrapper stack gap-8 lg:gap-20">
+    <section id="#home" class="layout wrapper stack gap-8 lg:gap-20">
       <Home />
-    </section>
-    <section id="about">
-      <About />
     </section>
     <section id="work">
       <Work />
     </section>
-    <section id="work">
+    <section id="projects">
+      <Projects />
+    </section>
+    <section id="about">
+      <About />
+    </section>
+    <section id="contact">
       <ContactCTA />
     </section>
   </main>
@@ -26,6 +30,10 @@ import ContactCTA from "../components/ContactCTA.astro";
 <style>
   main {
     padding-top: 5rem;
+  }
+
+  section:not(#home, #contact) {
+    margin-bottom: 6rem;
   }
 
   .layout {

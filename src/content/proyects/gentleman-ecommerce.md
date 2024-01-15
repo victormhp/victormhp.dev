@@ -1,5 +1,7 @@
 ---
+area: projects
 title: Gentleman Store
+subtitle: Featured Project
 img: /assets/gentleman-ecommerce.webp
 img_alt: Screenshot from Gentleman Programming ecommerce.
 description: |

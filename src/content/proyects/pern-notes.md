@@ -1,5 +1,7 @@
 ---
+area: projects
 title: Pern Notes
+subtitle: Featured Project
 img: /assets/notes.webp
 img_alt: Screenshot from Pern Notes web app.
 description: |

@@ -5,7 +5,7 @@ import Icon from "./Icon.astro";
 import Pill from "./Pill.astro";
 
 interface Props {
-  project: CollectionEntry<"work">;
+  project: CollectionEntry<"proyects">;
 }
 
 const { data } = Astro.props.project;
@@ -17,7 +17,7 @@ const { data } = Astro.props.project;
   </a>
   <div class="card">
     <div>
-      <p class="featured">Featured Project</p>
+      <p class="featured">{data.subtitle}</p>
       <h3 class="title">{data.title}</h3>
     </div>
     <div class="content">
