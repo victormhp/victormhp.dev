@@ -74,7 +74,6 @@ html,
 body {
   height: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem;
 }
 
 body {
@@ -152,13 +151,13 @@ h5 {
 }
 
 .base-container {
-  height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
 }
 
 .wrapper {
-  --wrapper-padding: 4rem;
+  --wrapper-padding: 2rem;
 
   margin-inline: auto;
   width: min(1110px, 100% - var(--wrapper-padding));
@@ -208,29 +207,37 @@ h5 {
 .gap-2 {
   gap: 0.5rem;
 }
+
 .gap-4 {
   gap: 1rem;
 }
+
 .gap-8 {
   gap: 2rem;
 }
+
 .gap-10 {
   gap: 2.5rem;
 }
+
 .gap-15 {
   gap: 3.75rem;
 }
+
 .gap-20 {
   gap: 5rem;
 }
+
 .gap-30 {
   gap: 7.5rem;
 }
+
 .gap-48 {
   gap: 12rem;
 }
 
 @media (min-width: 50em) {
+
   html,
   body {
     scroll-padding-top: 8rem;
@@ -243,24 +250,31 @@ h5 {
   .lg\:gap-2 {
     gap: 0.5rem;
   }
+
   .lg\:gap-4 {
     gap: 1rem;
   }
+
   .lg\:gap-8 {
     gap: 2rem;
   }
+
   .lg\:gap-10 {
     gap: 2.5rem;
   }
+
   .lg\:gap-15 {
     gap: 3.75rem;
   }
+
   .lg\:gap-20 {
     gap: 5rem;
   }
+
   .lg\:gap-30 {
     gap: 7.5rem;
   }
+
   .lg\:gap-48 {
     gap: 12rem;
   }

@@ -11,12 +11,14 @@ const currentYear = new Date().getFullYear();
     <a target="_blank" href="https://github.com/victormhp" rel="noopener noreferrer"> GitHub</a>
   </p>
 </footer>
+
 <style>
   footer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 3rem;
-    margin-top: auto;
+    gap: 1rem;
     padding: 3rem 2rem 3rem;
     text-align: center;
     color: var(--gray-600);
@@ -49,7 +51,8 @@ const currentYear = new Date().getFullYear();
 
   @media (min-width: 50em) {
     footer {
-      padding: 2.5rem 5rem;
+      flex-direction: row;
+      padding: 1rem 4rem;
     }
 
     .group {

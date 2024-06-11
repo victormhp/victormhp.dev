@@ -1,19 +1,18 @@
 ---
 import Icon from "./Icon.astro";
-import { iconLinks } from "../config/socials";
 import Resume from "./Resume.astro";
+import { iconLinks } from "../config/socials";
 
-const textLinks: { label: string; href: string }[] = [
-  { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+const textLinks = [
+  { label: "Home", href: "/" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "About", href: "/about" },
 ];
 ---
 
 <nav>
   <div class="menu-header">
-    <a href="#home" class="site-title">
+    <a href="/" class="site-title">
       <Icon icon="terminal-window" color="var(--accent-dark)" size="1.6em" />
        Victor.dev
     </a>
@@ -124,9 +123,7 @@ const textLinks: { label: string; href: string }[] = [
   }
 
   nav {
-    position: fixed;
-    left: 0;
-    right: 0;
+    width: 100%;
     z-index: 9999;
     margin: 0 auto;
     padding: 0.5rem 0rem;

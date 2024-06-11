@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Subtitle from "../components/Subtitle.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("proyects");
+---
+
+<BaseLayout>
+  <main class="wrapper stack gap-20 lg:gap-20">
+    <section class="stack gap-4">
+      <Subtitle>Work</Subtitle>
+      <ul class="stack gap-10 lg:gap-20">
+        {
+          projects.map(
+            (project) =>
+              project.data.area === "work" && (
+                <li>
+                  <PortfolioPreview project={project} />
+                </li>
+              ),
+          )
+        }
+      </ul>
+    </section>
+    <section class="stack gap-4">
+      <Subtitle>Projects</Subtitle>
+      <ul class="stack gap-10 lg:gap-20">
+        {
+          projects.map(
+            (project) =>
+              project.data.area === "projects" && (
+                <li>
+                  <PortfolioPreview project={project} />
+                </li>
+              ),
+          )
+        }
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding: 2rem 0;
+  }
+</style>

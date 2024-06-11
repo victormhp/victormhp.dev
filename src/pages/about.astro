@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Subtitle from "../components/Subtitle.astro";
+
+const skills = "https://skillicons.dev/icons?i=python,flask,express,postgres,html,css,javascript,typescript,react,svelte,d3&perline=6";
+---
+
+<BaseLayout>
+  <main class="wrapper">
+    <Subtitle>About</Subtitle>
+    <div class="about">
+      <div class="stack gap-8">
+        <div>
+          <h3>Background</h3>
+          <p>
+            Currently a computing systems student based in Guerrero, Mexico, with a keen interest in web development and data science. As I
+            delved deeper into programming and math, I discovered their synergy in data analysis and web development, igniting a passion for
+            exploring their endless possibilities.
+          </p>
+          <p>
+            I'm passionate about learning and constantly improving my skills. In my free time, I enjoy going to the gym, playing music, and
+            strumming the guitar.
+          </p>
+        </div>
+        <div class="stack gap-4">
+          <h3>Technologies</h3>
+          <img src={skills} alt="skill-icons" />
+        </div>
+      </div>
+      <img class="desktop" src="/assets/about.webp" alt="My i3 Debian desktop." />
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .desktop {
+    border-radius: 0.5rem;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-family: var(--font-brand);
+    padding-bottom: 0.5em;
+  }
+
+  p {
+    font-size: var(--text-md);
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 64em) {
+    .about {
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      align-items: start;
+      gap: 4rem;
+    }
+  }
+</style>
