@@ -3,7 +3,7 @@ area: work
 title: EoN Simulations
 subtitle: INMEGEN - Intership
 description: |
-  Dynamic web application that empowers users to create and visualize epidemic networks.
+  Dynamic web application that empowers users to create and visualize epidemics on networks.
 tags:
   - Flask
   - Svelte
