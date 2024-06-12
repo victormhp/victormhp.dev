@@ -1,7 +1,7 @@
 ---
 area: work
 title: EoN Simulations
-subtitle: INMEGEN - Intership
+subtitle: INMEGEN - Internship
 description: |
   Dynamic web application that empowers users to create and visualize epidemics on networks.
 tags:
