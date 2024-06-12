@@ -37,71 +37,71 @@ const skills = "https://skillicons.dev/icons?i=python,go,typescript,flask,expres
       </div>
     </div>
   </main>
-</BaseLayout>
 
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
 
-  .about {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .about-image img {
-    border-radius: 0.25rem;
-    object-fit: cover;
-  }
-
-  h3 {
-    font-size: var(--text-lg);
-    font-family: var(--font-brand);
-    padding-bottom: 1rem;
-  }
-
-  p {
-    font-size: var(--text-md);
-    margin-bottom: 1rem;
-  }
-
-  span {
-    font-weight: 600;
-    color: var(--accent-dark);
-  }
-
-  @media (min-width: 64em) {
     .about {
-      display: grid;
-      grid-template-columns: 6fr 5fr;
-      gap: 3rem;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      gap: 1em;
     }
 
-    .about-image {
-      position: relative;
+    .about-image img {
+      border-radius: 0.25rem;
+      object-fit: cover;
+    }
 
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 0.5rem;
+    h3 {
+      font-size: var(--text-lg);
+      font-family: var(--font-brand);
+      padding-bottom: 1rem;
+    }
+
+    p {
+      font-size: var(--text-md);
+      margin-bottom: 1rem;
+    }
+
+    span {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    @media (min-width: 64em) {
+      .about {
+        display: grid;
+        grid-template-columns: 6fr 5fr;
+        gap: 3rem;
       }
 
-      &::after {
-        border: 2px solid var(--accent-dark);
-        top: 8px;
-        left: 15px;
-        z-index: -1;
+      .about-image {
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 0.5rem;
+        }
+
+        &::after {
+          border: 2px solid var(--accent-dark);
+          top: 8px;
+          left: 15px;
+          z-index: -1;
+        }
       }
     }
-  }
-</style>
+  </style>
+</BaseLayout>
