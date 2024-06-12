@@ -12,28 +12,30 @@ const { data } = Astro.props.project;
 ---
 
 <article class="project">
-  <a href={data.deploy_url ?? data.github_url} target="_blank" rel="noopener noreferrer">
-    <img src={data.img} alt={data.img_alt} loading="lazy" decoding="async" />
-  </a>
-  <div class="card">
-    <div>
-      <p class="featured">{data.subtitle}</p>
-      <h3 class="title">{data.title}</h3>
-    </div>
-    <div class="content">
+  <div class="project-image">
+    <a href={data.deploy_url ?? data.github_url} target="_blank" rel="noopener noreferrer">
+      <img src={data.img} alt={data.img_alt} loading="lazy" decoding="async" />
+    </a>
+  </div>
+  <div class="project-content">
+    <header class="project-header">
+      <p>{data.subtitle}</p>
+      <h3>{data.title}</h3>
+    </header>
+    <main class="project-data">
       <p>{data.description}</p>
       <div class="tags">
         {data.tags.map((t) => <Pill>{t}</Pill>)}
       </div>
-    </div>
-    <footer class="footer">
-      <a class="link" href={data.github_url} target="_blank" rel="noopener noreferrer">
-        <Icon icon="github-logo" />
+    </main>
+    <footer class="project-footer">
+      <a href={data.github_url} target="_blank" rel="noopener noreferrer">
+        <Icon icon="github-logo" size="1.75rem" />
       </a>
       {
         data.deploy_url ? (
-          <a class="link" href={data.deploy_url} target="_blank" rel="noopener noreferrer">
-            <Icon icon="arrow-square-out" />
+          <a href={data.deploy_url} target="_blank" rel="noopener noreferrer">
+            <Icon icon="arrow-square-out" size="1.75rem" />
           </a>
         ) : null
       }
@@ -43,9 +45,6 @@ const { data } = Astro.props.project;
 
 <style>
   .project {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
     border-radius: 0.5rem;
     border: 2px solid var(--gray-800);
     box-shadow:
@@ -55,37 +54,38 @@ const { data } = Astro.props.project;
       3.5px 4px 0 0 var(--gray-800),
       4.5px 5px 0 0 var(--gray-800),
       5.5px 6px 0 0 var(--gray-800);
-    padding: 1rem;
+    padding: 2rem;
   }
 
-  .project img {
-    border-radius: 0.25rem;
+  .project-image {
+    & img {
+      border-radius: 0.25rem;
+    }
   }
 
-  .card {
+  .project-content {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 2.5rem;
   }
 
-  .featured {
-    color: var(--accent-dark);
-    font-size: var(--text-base);
-    font-family: var(--font-brand);
+  .project-header {
+    & p {
+      color: var(--accent-dark);
+      font-size: var(--text-base);
+      font-family: var(--font-brand);
+    }
+
+    & h3 {
+      color: var(--gray-0);
+      font-size: var(--text-xl);
+      font-family: var(--font-brand);
+    }
   }
 
-  .title {
-    color: var(--gray-0);
-    font-size: var(--text-xl);
-    font-family: var(--font-brand);
-  }
-
-  .content {
-    padding: 2rem 0rem;
-  }
-
-  .content p {
+  .project-data p {
     padding-bottom: 1rem;
     font-size: var(--text-md);
   }
@@ -97,37 +97,34 @@ const { data } = Astro.props.project;
     font-size: var(--text-sm);
   }
 
-  .footer {
+  .project-footer {
     --icon-size: var(--text-2xl);
-    --icon-padding: 0.5rem;
-
+    --icon-padding: 0.35rem;
+ 
+    margin-top: auto;
     display: flex;
     justify-content: end;
     gap: 0.625rem;
     font-size: var(--icon-size);
-  }
 
-  .link {
-    display: flex;
-    padding: var(--icon-padding);
-    color: var(--gray-800);
-    transition: color var(--theme-transition);
-  }
+    & a {
+      display: flex;
+      padding: var(--icon-padding);
+      color: var(--gray-800);
+      transition: color var(--theme-transition);
+    }
 
-  .link:is(:hover, :focus-visible) {
-    color: var(--accent-dark);
+    & a:is(:hover, :focus-visible) {
+      color: var(--accent-dark);
+    }
   }
 
   @media (min-width: 64em) {
     .project {
       display: grid;
-      grid-template-columns: 5fr 4fr;
+      grid-template-columns: 6fr 4fr;
       align-items: center;
-      padding: 2rem;
-    }
-
-    .footer {
-      --icon-padding: 0.375rem;
+      gap: 1.5rem;
     }
   }
 </style>

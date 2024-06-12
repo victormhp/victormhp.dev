@@ -10,6 +10,7 @@ const { href, color } = Astro.props;
 <a class:list={["btn-pressable", color]} {href}>
   <slot />
 </a>
+
 <style>
   .btn-pressable {
     color: var(--gray-800);
