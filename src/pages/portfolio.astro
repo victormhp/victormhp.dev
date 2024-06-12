@@ -8,10 +8,10 @@ const projects = await getCollection("proyects");
 ---
 
 <BaseLayout>
-  <main class="wrapper stack gap-20 lg:gap-20">
+  <main class="wrapper stack gap-10 lg:gap-20">
     <section class="stack gap-4">
       <Subtitle>Work</Subtitle>
-      <ul class="stack gap-10 lg:gap-20">
+      <ul class="stack gap-10 lg:gap-15">
         {
           projects.map(
             (project) =>
@@ -26,7 +26,7 @@ const projects = await getCollection("proyects");
     </section>
     <section class="stack gap-4">
       <Subtitle>Projects</Subtitle>
-      <ul class="stack gap-10 lg:gap-20">
+      <ul class="stack gap-10 lg:gap-15">
         {
           projects.map(
             (project) =>
@@ -44,6 +44,6 @@ const projects = await getCollection("proyects");
 
 <style>
   main {
-    padding: 2rem 0;
+    padding: 3rem 2rem;
   }
 </style>
