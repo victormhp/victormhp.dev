@@ -2,11 +2,13 @@
 import Icon from "./Icon.astro";
 import Resume from "./Resume.astro";
 import { iconLinks } from "../config/socials";
+import { navigate } from 'astro:transitions/client';
+
 
 const textLinks = [
-  { label: "Home", href: "/" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 ---
 
@@ -81,6 +83,8 @@ const textLinks = [
 </nav>
 
 <script>
+import { navigate } from "astro/transitions/router";
+
   class MenuButton extends HTMLElement {
     constructor() {
       super();
@@ -95,17 +99,18 @@ const textLinks = [
 
       const setExpanded = () => {
         btn.toggleAttribute("aria-expanded");
-        menu.classList.toggle("menu-open");
-
         body.toggleAttribute("data-menu-open");
+        menu.classList.toggle("menu-open");
       };
 
       btn.addEventListener("click", () => setExpanded());
 
       navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (event) => {
           if (menu.classList.contains("menu-open")) {
+            event.preventDefault();
             setExpanded();
+            setTimeout(() => navigate(link.getAttribute("href")), 300)
           }
         });
       });
@@ -195,15 +200,6 @@ const textLinks = [
 
   .link {
     color: var(--gray-800);
-  }
-
-  .menu-open {
-    & .link {
-      font-size: var(--text-2xl);
-    }
-    & .resume {
-      font-size: var(--text-2xl);
-    }
   }
 
   .menu-footer {

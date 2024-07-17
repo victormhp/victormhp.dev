@@ -5,7 +5,7 @@ import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout>
-  <main class="layout wrapper">
+  <main class="layout wrapper" transition:animate="slide">
     <section class="contact wrapper">
       <h2>Interested in working together?</h2>
       <p>
@@ -22,7 +22,6 @@ import Icon from "../components/Icon.astro";
 
 <style>
   main {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
