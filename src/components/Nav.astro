@@ -11,6 +11,7 @@ const currentPage = Astro.url.pathname;
 >
   <div class="flex items-center justify-between gap-2">
     <a
+      id="logo"
       class="flex items-center gap-2 transition-transform duration-300 hover:scale-110"
       href="/"
       title="Ir a la página principal"
@@ -37,10 +38,7 @@ const currentPage = Astro.url.pathname;
       {
         pages.map(({ label, href }) => (
           <li
-            class:list={[
-              "hover:underline-lift focus-visible:underline-lift transition-all",
-              currentPage == href ? "underline-lift" : "",
-            ]}
+            class:list={["hover:underline-lift focus-visible:underline-lift transition-all", currentPage == href ? "underline-lift" : ""]}
           >
             <a class="link text-gray-800" {href}>
               {label}
@@ -68,24 +66,32 @@ const currentPage = Astro.url.pathname;
 <script>
   import { navigate } from "astro:transitions/client";
 
+  function isMenuOpen(): boolean {
+    return document.body.getAttribute("data-menu-open") == "true";
+  }
+
+  function initLogoBehavior() {
+    const logo = document.querySelector("#logo");
+
+    logo.addEventListener("click", (event) => {
+      if (window.location.pathname == logo.getAttribute("href")) {
+        event.preventDefault();
+      }
+    });
+  }
+
   function initMobileMenu() {
-    const body = document.body;
     const btn = document.querySelector("#hamburger");
     const menu = document.querySelector("#nav-menu");
     const navLinks = document.querySelectorAll(".link");
 
-    const isMenuOpened = (): boolean => {
-      return body.getAttribute("data-menu-open") == "true";
-    };
-
     const toggleMenu = () => {
-      if (isMenuOpened()) {
-        body.setAttribute("data-menu-open", "false");
-        btn.setAttribute("aria-expanded", "false");
-      } else {
-        body.setAttribute("data-menu-open", "true");
-        btn.setAttribute("aria-expanded", "true");
-      }
+      const isOpen = isMenuOpen();
+      const menuState = isOpen ? "false" : "true";
+
+      document.body.setAttribute("data-menu-open", menuState);
+      btn.setAttribute("aria-expanded", menuState);
+
       menu.classList.toggle("translate-x-full");
       menu.classList.toggle("translate-x-0");
     };
@@ -93,18 +99,27 @@ const currentPage = Astro.url.pathname;
     btn.addEventListener("click", () => toggleMenu());
 
     navLinks.forEach((link) => {
+      const page = link.getAttribute("href");
       link.addEventListener("click", (event) => {
-        if (isMenuOpened()) {
+        if (page == window.location.pathname) {
+          event.preventDefault();
+        }
+
+        if (isMenuOpen()) {
           event.preventDefault();
           toggleMenu();
-          const page = link.getAttribute("href");
-          setTimeout(() => navigate(page), 250);
+          setTimeout(() => navigate(page), 200);
         }
       });
     });
   }
 
-  document.addEventListener("astro:after-swap", () => initMobileMenu());
+  document.addEventListener("astro:after-swap", () => {
+    initLogoBehavior();
+    initMobileMenu();
+  });
+
+  initLogoBehavior();
   initMobileMenu();
 </script>
 
