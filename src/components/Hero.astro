@@ -1,59 +1,16 @@
----
-interface Props {
-  title: string;
-  tagline?: string;
-  align?: "start" | "center";
-}
-
-const { align = "center", tagline, title } = Astro.props;
----
-
-<div class:list={["hero stack gap-8", align]}>
-  <div class="stack gap-2">
-    <h1 class="title shadow-letters">{title}</h1>
-    {tagline && <p class="tagline">{tagline}</p>}
+<div class="space-y-12 text-start text-lg">
+  <div class="space-y-8">
+    <div class="space-y-4">
+      <h1 class="text-dark font-bold">Hi, my name is</h1>
+      <h2 class="text-shadow-effect font-recoleta text-7xl">Victor Alberto.</h2>
+      <h3 class="font-recoleta text-5xl">I like to build things.</h3>
+    </div>
+    <div>
+      <p class="max-w-[60ch] text-lg">
+        I’m a software engineering student focused on creating user-friendly and reliable digital solutions. I’m passionate about learning
+        and improving every day.
+      </p>
+    </div>
   </div>
   <slot />
 </div>
-
-<style>
-  .hero {
-    font-size: var(--text-lg);
-    text-align: center;
-  }
-
-  .title,
-  .tagline {
-    max-width: 37ch;
-    margin-inline: auto;
-  }
-
-  .title {
-    font-size: var(--text-3xl);
-  }
-
-  @media (min-width: 64em) {
-    .title {
-      font-size: var(--text-5xl);
-    }
-
-    .start {
-      text-align: start;
-    }
-
-    .start .title,
-    .start .tagline {
-      margin-inline: unset;
-    }
-  }
-
-  @media (min-width: 80em) {
-    .hero {
-      font-size: var(--text-xl);
-    }
-
-    .title {
-      font-size: var(--text-6xl);
-    }
-  }
-</style>

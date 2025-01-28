@@ -1,57 +1,30 @@
 ---
+import { socialsArray } from "../config.ts";
+
 const currentYear = new Date().getFullYear();
+
+// Remove discord from the footer
+const socialsFooter = socialsArray.slice(1)
 ---
 
-<footer>
-  <div class="group">
+<footer
+  class="flex h-auto min-w-[50px] flex-col items-center justify-center gap-1 px-6 py-4 text-center text-sm text-zinc-500 md:flex-row md:gap-4"
+>
+  <div>
     <p>&copy; {currentYear} Victor Alberto</p>
   </div>
-  <p class="socials">
-    <a target="_blank" href="https://www.linkedin.com/in/victormhp/" rel="noopener noreferrer"> LinkedIn</a>
-    <a target="_blank" href="https://github.com/victormhp" rel="noopener noreferrer"> GitHub</a>
-  </p>
-</footer>
-
-<style>
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    color: var(--gray-600);
-    font-size: var(--text-sm);
-  }
-
-  footer a {
-    color: var(--gray-600);
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  footer a:hover,
-  footer a:focus {
-    text-decoration-color: currentColor;
-  }
-
-  .group {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .socials {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  @media (min-width: 50em) {
-    .group {
-      gap: 1rem;
-      flex-wrap: wrap;
+  <div class="flex flex-wrap items-center gap-2">
+    {
+      socialsFooter.map(({ label, href, icon }) => (
+        <a
+          class="text-inherit decoration-zinc-500 underline-offset-4 transition-all hover:underline focus-visible:underline"
+          target="_blank"
+          href={href}
+          rel="noopener noreferrer"
+        >
+          {label}
+        </a>
+      ))
     }
-  }
-</style>
+  </div>
+</footer>

@@ -6,19 +6,18 @@ const skills = "https://skillicons.dev/icons?i=python,go,typescript,flask,expres
 ---
 
 <BaseLayout>
-  <main class="wrapper" transition:animate="slide">
+  <main class="wrapper flex flex-col items-start justify-center p-8" transition:animate="slide">
     <Subtitle>About Me</Subtitle>
-    <div class="about">
-      <div class="stack gap-10">
-        <div>
+    <div class="flex flex-col-reverse justify-between gap-4 lg:grid lg:grid-cols-2 lg:gap-12">
+      <div class="flex flex-col gap-8">
+        <div class="space-y-4">
           <p>
-            Hello! I'm Victor, a <span>software engineer</span> student based in Guerrero, Mexico. I chose to pursue programming because I
-            love crafting innovative solutions to a variety of problems.
+            Hello! I'm Victor, a <span>software engineer</span> student based in Guerrero, Mexico. I chose to pursue programming because I love
+            crafting innovative solutions to a variety of problems.
           </p>
           <p>
             As a dedicated and enthusiastic
-            <span>web developer</span>, creating <span>responsive</span> and <span>user-friendly</span> web applications is my bread and
-            butter.
+            <span>web developer</span>, creating <span>responsive</span> and <span>user-friendly</span> web applications is my bread and butter.
           </p>
           <p>
             Always eager to explore new technologies and tools. When I'm not coding, you'll find me hitting the gym, playing music, or
@@ -26,63 +25,26 @@ const skills = "https://skillicons.dev/icons?i=python,go,typescript,flask,expres
           </p>
         </div>
         <div class="tech">
-          <h3>Technologies</h3>
+          <h3 class="font-brand pb-4 text-xl">Technologies</h3>
           <img src={skills} alt="skill-icons" />
         </div>
       </div>
       <div>
-        <div class="about-image">
-          <img src="/assets/about.webp" alt="My i3 Debian desktop." />
+        <div class="desktop">
+          <img class="rounded object-cover" src="/assets/about.webp" alt="My i3 Debian desktop." />
         </div>
       </div>
     </div>
   </main>
 
   <style>
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .about {
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: space-between;
-      gap: 1em;
-    }
-
-    .about-image img {
-      border-radius: 0.25rem;
-      object-fit: cover;
-    }
-
-    h3 {
-      font-size: var(--text-lg);
-      font-family: var(--font-brand);
-      padding-bottom: 1rem;
-    }
-
-    p {
-      font-size: var(--text-md);
-      margin-bottom: 1rem;
-    }
-
     span {
       font-weight: 600;
-      color: var(--accent-dark);
+      color: var(--color-dark);
     }
 
     @media (min-width: 64em) {
-      .about {
-        display: grid;
-        grid-template-columns: 6fr 5fr;
-        gap: 3rem;
-      }
-
-      .about-image {
+      .desktop {
         position: relative;
 
         &::before,
@@ -96,8 +58,8 @@ const skills = "https://skillicons.dev/icons?i=python,go,typescript,flask,expres
         }
 
         &::after {
-          border: 2px solid var(--accent-dark);
-          top: 8px;
+          border: 2px solid var(--color-dark);
+          top: 15px;
           left: 15px;
           z-index: -1;
         }

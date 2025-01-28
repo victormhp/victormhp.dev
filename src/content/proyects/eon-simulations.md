@@ -1,5 +1,4 @@
 ---
-area: work
 title: EoN Simulations
 subtitle: INMEGEN - Internship
 description: |

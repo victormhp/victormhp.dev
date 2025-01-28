@@ -1,5 +1,4 @@
 ---
-area: projects
 title: Gentleman Store
 subtitle: Featured Project
 img: /assets/gentleman-ecommerce.webp

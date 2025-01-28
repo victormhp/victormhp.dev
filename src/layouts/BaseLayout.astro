@@ -18,16 +18,10 @@ const { title, description } = Astro.props;
     <MainHead {title} {description} />
   </head>
   <body>
-    <div class="base-container">
-      <Nav />
-      <Socials />
-      <Email />
-      <slot />
-      <Footer />
-    </div>
-
-    <script>
-      document.addEventListener("astro:page-load", () => document.documentElement.classList.add("loaded"));
-    </script>
+    <Nav />
+    <Socials />
+    <Email />
+    <slot />
+    <Footer />
   </body>
 </html>

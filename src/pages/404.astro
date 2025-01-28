@@ -1,18 +1,9 @@
 ---
-import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Not Found" description="404 Error — this page was not found">
-  <main class="wrapper stack gap-8 lg:gap-20" transition:animate="slide">
-    <Hero title="Page Not Found" tagline="Not found" />
+  <main class="wrapper grid h-full place-content-center gap-4">
+    <h1 class="font-recoleta text-shadow-effect text-3xl md:text-6xl">Page Not Found</h1>
   </main>
 </BaseLayout>
-
-<style>
-  main {
-    height: 100%;
-    display: grid;
-    place-content: center;
-  }
-</style>

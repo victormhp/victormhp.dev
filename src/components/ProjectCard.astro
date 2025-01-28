@@ -1,0 +1,49 @@
+---
+import Icon from "./Icon.astro";
+import Pill from "./Pill.astro";
+import { type Project } from "../content/config";
+
+const { data }: Project = Astro.props.project;
+---
+
+<article class="border-shadow lg:grid lg:grid-cols-2 lg:items-center lg:gap-6">
+  <div>
+    <a href={data.deploy_url ?? data.github_url} target="_blank" rel="noopener noreferrer">
+      <img class="rounded" src={data.img} alt={data.img_alt} loading="lazy" decoding="async" />
+    </a>
+  </div>
+  <div class="flex h-full flex-col justify-start gap-8">
+    <header class="font-brand">
+      <p class="text-dark text-base">{data.subtitle}</p>
+      <h3 class="text-2xl text-gray-800">{data.title}</h3>
+    </header>
+    <main>
+      <p class="pb-4 text-base">{data.description}</p>
+      <div class="flex flex-wrap gap-2 text-sm">
+        {data.tags.map((t) => <Pill>{t}</Pill>)}
+      </div>
+    </main>
+    <footer class="mt-auto flex justify-end gap-2 text-xl">
+      <a
+        class="hover:text-dark focus-visible:text-dark flex p-2 text-gray-800 transition-colors"
+        href={data.github_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon icon="github" size="1.625em" />
+      </a>
+      {
+        data.deploy_url ? (
+          <a
+            class="hover:text-dark focus-visible:text-dark flex p-2 text-gray-800 transition-colors"
+            href={data.deploy_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon icon="link" size="1.625em" />
+          </a>
+        ) : null
+      }
+    </footer>
+  </div>
+</article>

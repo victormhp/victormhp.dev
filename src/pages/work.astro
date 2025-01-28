@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Subtitle from "../components/Subtitle.astro";
+import ProyectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("proyects");
+---
+
+<BaseLayout>
+  <main class="wrapper stack gap-15 px-8 py-12 lg:gap-20" transition:animate="slide">
+    <section>
+      <Subtitle>Work</Subtitle>
+      <ul class="stack gap-10 lg:gap-15">
+        {
+          projects.map((p) => (
+            <li>
+              <ProyectCard project={p} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</BaseLayout>

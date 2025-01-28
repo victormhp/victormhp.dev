@@ -13,10 +13,15 @@ const { href, color } = Astro.props;
 
 <style>
   .btn-pressable {
-    color: var(--gray-800);
-    border: 2px solid var(--gray-800);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    width: fit-content;
+    color: var(--color-gray-800);
+    border: 2px solid var(--color-gray-800);
     font-size: var(--text-md);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 2rem;
     border-radius: 10rem;
     position: relative;
     transition:
@@ -25,35 +30,34 @@ const { href, color } = Astro.props;
       transform 0.45s;
     top: 0;
     left: 0;
-    display: inline-block;
     text-align: center;
     box-shadow:
-      0 1px 0 0 var(--gray-800),
-      0 2px 0 0 var(--gray-800),
-      0 3px 0 0 var(--gray-800);
+      0 1px 0 0 var(--color-gray-800),
+      0 2px 0 0 var(--color-gray-800),
+      0 3px 0 0 var(--color-gray-800);
     transform: rotateX(0) rotateY(0) rotateZ(0);
-  }
 
-  .btn-pressable:hover {
-    box-shadow:
-      0 0 0 0 var(--gray-800),
-      0 0 0 0 var(--gray-800),
-      0 0 0 0 var(--gray-800);
-    top: 3px;
-    transform: rotateX(5deg) rotateY(10deg) rotateZ(0.5deg);
-  }
+    &:hover {
+      box-shadow:
+        0 0 0 0 var(--color-gray-800),
+        0 0 0 0 var(--color-gray-800),
+        0 0 0 0 var(--color-gray-800);
+      top: 3px;
+      transform: rotateX(5deg) rotateY(10deg) rotateZ(0.5deg);
+    }
 
-  .btn-pressable:focus-visible {
-    --outline-background: var(--bg-color);
+    &:focus-visible {
+      --outline-background: var(--color-gray-100);
 
-    box-shadow:
-      0 0 0 0 var(--gray-800),
-      0 0 0 0 var(--gray-800),
-      0 0 0 0 var(--gray-800),
-      0 0 0 2px var(--outline-background),
-      0 0 0 4px var(--gray-800);
-    top: 3px;
-    border: 2px solid var(--gray-800) !important;
-    outline: 0;
+      box-shadow:
+        0 0 0 0 var(--color-gray-800),
+        0 0 0 0 var(--color-gray-800),
+        0 0 0 0 var(--color-gray-800),
+        0 0 0 2px var(--outline-background),
+        0 0 0 4px var(--color-gray-800);
+      top: 3px;
+      border: 2px solid var(--color-gray-800) !important;
+      outline: 0;
+    }
   }
 </style>

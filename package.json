@@ -1,7 +1,7 @@
 {
-  "name": "@example/portfolio",
+  "name": "victor.dev",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,10 +11,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.3"
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^5.1.10"
   },
   "devDependencies": {
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
-  }
+    "@tailwindcss/vite": "^4.0.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.0"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }

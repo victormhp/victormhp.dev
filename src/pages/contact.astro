@@ -5,64 +5,17 @@ import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout>
-  <main class="layout wrapper" transition:animate="slide">
-    <section class="contact wrapper">
-      <h2>Interested in working together?</h2>
-      <p>
+  <main class="wrapper flex items-center justify-center" transition:animate="slide">
+    <section class="w-full h-fit flex flex-col text-center justify-center items-center gap-12 border-t-2 border-b-2 border-gray-800 py-20 px-6 lg:flex-wrap lg:p-28">
+      <h2 class="font-recoleta text-3xl md:text-4xl">Interested in working together?</h2>
+      <p class="max-w-[50ch]">
         I'm on the lookout for new opportunities, and my inbox is open 24/7. Whether you've got questions or just want to say hi, I'll do my
         best to get back to you as soon as possible!
       </p>
-      <Button href="mailto:victoralbertomhp@gmail.com" color="bg-pink">
+      <Button href="mailto:victoralbertomhp@gmail.com">
         Send Me a Message
-        <Icon icon="paper-plane-tilt" size="1.2em" />
+        <Icon icon="plane" size="1.625em" />
       </Button>
     </section>
   </main>
 </BaseLayout>
-
-<style>
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .contact {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    border-top: 2px solid var(--gray-800);
-    border-bottom: 2px solid var(--gray-800);
-    padding: 5rem 1.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-    text-align: center;
-  }
-
-  p {
-    font-size: var(--text-base);
-    text-align: center;
-  }
-
-  @media (min-width: 50em) {
-    .contact {
-      padding: 7.5rem;
-      flex-wrap: wrap;
-    }
-
-    h2 {
-      font-size: var(--text-3xl);
-    }
-
-    p {
-      max-width: 50ch;
-      font-size: var(--text-md);
-    }
-  }
-</style>

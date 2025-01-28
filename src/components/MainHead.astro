@@ -1,13 +1,13 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
 }
 
-const { title = "Hi, I'm Victor", description = "The personal site of Victor Alberto" } = Astro.props;
+const { title = "Victor Alberto", description = "The personal site of software developer Victor Alberto" } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
@@ -15,13 +15,11 @@ const { title = "Hi, I'm Victor", description = "The personal site of Victor Alb
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
-
-<ViewTransitions />
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
   rel="stylesheet"
 />
+<ClientRouter />

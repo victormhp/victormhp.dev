@@ -1,5 +1,4 @@
 ---
-area: projects
 title: Pern Notes
 subtitle: Featured Project
 img: /assets/notes.webp
