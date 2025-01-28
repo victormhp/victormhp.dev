@@ -5,9 +5,9 @@ import Hero from "../components/Hero.astro";
 ---
 
 <BaseLayout>
-  <main class="wrapper flex flex-col-reverse justify-center gap-2 p-2" transition:animate="slide">
+  <main class="wrapper flex flex-col-reverse justify-center gap-2 md:px-8" transition:animate="slide">
     <Hero>
-      <div class="flex flex-col gap-8 lg:flex-row">
+      <div class="flex flex-col justify-start gap-8 sm:flex-row">
         <Button href="/about" color="bg-btn-green">About me</Button>
         <Button href="/work" color="bg-btn-blue">Check out my work!</Button>
       </div>

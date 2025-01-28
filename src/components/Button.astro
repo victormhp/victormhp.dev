@@ -13,11 +13,11 @@ const { href, color } = Astro.props;
 
 <style>
   .btn-pressable {
+    font-family: var(--font-brand);
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: nowrap;
-    width: fit-content;
     color: var(--color-gray-800);
     border: 2px solid var(--color-gray-800);
     font-size: var(--text-md);
@@ -58,6 +58,10 @@ const { href, color } = Astro.props;
       top: 3px;
       border: 2px solid var(--color-gray-800) !important;
       outline: 0;
+    }
+
+    @media (min-width: 48em) {
+        font-size: var(--text-lg);
     }
   }
 </style>

@@ -51,10 +51,14 @@
 }
 
 @utility wrapper {
-  --wrapper-padding: 2rem;
+  --wrapper-padding: 4rem;
 
   margin-inline: auto;
   width: min(1110px, 100% - var(--wrapper-padding));
+
+  @media (min-width: 48em) {
+    --wrapper-padding: 10rem;
+  }
 }
 
 @utility text-shadow-effect {
@@ -108,15 +112,16 @@
 
 /* Scroll Bar */
 ::-webkit-scrollbar {
-  width: 0.5em;
+  width: 0.5rem;
 }
+      
 
 ::-webkit-scrollbar-track {
-  background-color: var(--bg-color);
+  background-color: var(--color-gray-50);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--gray-800);
+  background-color: var(--color-gray-800);
   border-radius: 100vw;
 }
 
@@ -132,15 +137,4 @@
 :focus:not(:focus-visible) {
   outline: none;
   outline-offset: 0px;
-}
-
-.stack {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 50em) {
-  .wrapper {
-    --wrapper-padding: 17rem;
-  }
 }
