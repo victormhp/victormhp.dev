@@ -1,17 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
-import Hero from "../components/Hero.astro";
 ---
 
 <BaseLayout>
-  <main class="wrapper flex flex-col-reverse justify-center gap-2 md:px-8" transition:animate="slide">
-    <Hero>
-      <div class="flex flex-col justify-start gap-8 sm:flex-row">
+  <main
+    class="wrapper flex flex-col-reverse justify-center gap-12 py-12 md:px-8 lg:grid lg:grid-cols-[5fr_3fr] lg:place-items-center"
+    transition:animate="slide"
+  >
+    <div class="space-y-12 text-start text-lg">
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <h1 class="text-dark font-bold">Hi, my name is</h1>
+          <h2 class="text-shadow-effect font-recoleta text-5xl lg:text-7xl">Victor Alberto.</h2>
+          <h3 class="font-recoleta text-3xl lg:text-5xl">I craft ideas into code.</h3>
+        </div>
+        <div>
+          <p class="max-w-[60ch] text-lg">
+            I’m a software engineering student focused on creating user-friendly and reliable digital solutions. I’m passionate about
+            learning and improving every day.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col justify-start gap-8 md:flex-row">
         <Button href="/about" color="bg-btn-green">About me</Button>
         <Button href="/work" color="bg-btn-blue">Check out my work!</Button>
       </div>
-    </Hero>
+    </div>
+    <div class="hero-img">
+      <img src="/assets/profile.jpeg" alt="" />
+    </div>
   </main>
 </BaseLayout>
 
@@ -46,7 +64,7 @@ import Hero from "../components/Hero.astro";
       }
 
       &::after {
-        border: 2px solid var(--accent-dark);
+        border: 2px solid var(--color-dark);
         top: 15px;
         left: 20px;
         z-index: -1;

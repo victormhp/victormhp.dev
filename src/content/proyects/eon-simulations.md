@@ -4,6 +4,8 @@ subtitle: INMEGEN - Internship
 description: |
   Dynamic web application that empowers users to create and visualize epidemics on networks.
 tags:
+  - Python
+  - Typescript
   - Flask
   - Svelte
   - D3

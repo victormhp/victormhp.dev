@@ -21,13 +21,13 @@
   --font-recoleta: Recoleta, var(--font-system);
 
   /* Colors */
-  --color-light: #e9d5ff;
-  --color-regular: #d8b4fe;
-  --color-dark: #a855f7;
+  /* --color-light: #e9d5ff; */
+  /* --color-regular: #d8b4fe; */
+  /* --color-dark: #a855f7; */
 
-  --color-button-green: #d1fff1;
-  --color-button-pink: #c6f6ff;
-  --color-button-blue: #f9d9f9;
+  --color-light: #ffe3e9;
+  --color-regular: #ffabba;
+  --color-dark: #73162f;
 }
 
 @layer base {
@@ -41,13 +41,6 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
   }
-}
-
-@utility base-container {
-  min-height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 }
 
 @utility wrapper {

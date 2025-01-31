@@ -14,10 +14,16 @@ import Icon from "../components/Icon.astro";
         I'm on the lookout for new opportunities, and my inbox is open 24/7. Whether you've got questions or just want to say hi, I'll do my
         best to get back to you as soon as possible!
       </p>
-      <Button href="mailto:victoralbertomhp@gmail.com">
+      <Button href="mailto:victoralbertomhp@gmail.com" color="var(--color-light)">
         Send Me a Message
         <Icon icon="plane" size="1.625em" />
       </Button>
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  .btn-contact {
+    background: var(--color-button-green);
+  }
+</style>

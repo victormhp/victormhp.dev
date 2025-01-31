@@ -7,7 +7,7 @@ interface Props {
 const { href, color } = Astro.props;
 ---
 
-<a class:list={["btn-pressable", color]} {href}>
+<a class="btn-pressable" style={`background: ${color};`} {href}>
   <slot />
 </a>
 
