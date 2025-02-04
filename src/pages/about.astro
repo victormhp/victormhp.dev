@@ -2,26 +2,33 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Subtitle from "../components/Subtitle.astro";
 
-const skills = "https://skillicons.dev/icons?i=python,go,typescript,flask,express,postgres,mysql,docker,html,css,react,svelte&perline=7";
+const skills =
+  "https://skillicons.dev/icons?i=python,go,typescript,flask,express,postgres,mysql,docker,html,css,react,svelte&perline=7";
 ---
 
 <BaseLayout>
-  <main class="wrapper flex flex-col items-start justify-center py-12 md:px-8" transition:animate="slide">
+  <main
+    class="wrapper flex flex-col items-start justify-center py-12 md:px-8"
+    transition:animate="slide"
+  >
     <Subtitle>About Me</Subtitle>
     <div class="flex flex-col-reverse justify-between gap-4 lg:grid lg:grid-cols-2 lg:gap-12">
       <div class="flex flex-col gap-8">
         <div class="space-y-4">
           <p>
-            Hello! I'm Victor, a <span>software engineer</span> student based in Guerrero, Mexico. I chose to pursue programming because I love
-            crafting innovative solutions to a variety of problems.
+            Hello! I'm Victor, a <span>software engineer</span> student based in Guerrero, Mexico. I
+            chose to pursue programming because I love crafting innovative solutions to a variety of
+            problems.
           </p>
           <p>
             As a dedicated and enthusiastic
-            <span>web developer</span>, creating <span>responsive</span> and <span>user-friendly</span> web applications is my bread and butter.
+            <span>web developer</span>, creating <span>responsive</span> and <span
+              >user-friendly</span
+            > web applications is my bread and butter.
           </p>
           <p>
-            Always eager to explore new technologies and tools. When I'm not coding, you'll find me hitting the gym, playing music, or
-            strumming my guitar.
+            Always eager to explore new technologies and tools. When I'm not coding, you'll find me
+            hitting the gym, playing music, or strumming my guitar.
           </p>
         </div>
         <div class="tech">

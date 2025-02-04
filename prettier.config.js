@@ -9,6 +9,6 @@ export default {
       },
     },
   ],
-  printWidth: 140,
+  printWidth: 100,
   astroAllowShorthand: true,
 };

@@ -1,12 +1,12 @@
 import type { iconPaths } from "./components/IconPaths";
 
-type Social = "linkedin" | "github" | "discord"
+type Social = "linkedin" | "github" | "discord";
 
 type Link = {
   label: string;
   href: string;
   icon: keyof typeof iconPaths;
-}
+};
 
 export const socials: Record<Social, Link> = {
   discord: {
@@ -29,9 +29,9 @@ export const socials: Record<Social, Link> = {
 export const socialsArray = Object.values(socials);
 
 type Page = {
-    label: string;
-    href: string;
-}
+  label: string;
+  href: string;
+};
 
 export const pages: Page[] = [
   { label: "About", href: "/about" },
