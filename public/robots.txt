@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://victormhp.dev
+
+# Sitemaps
+Sitemap: https://victormhp.dev/sitemap-index.xml

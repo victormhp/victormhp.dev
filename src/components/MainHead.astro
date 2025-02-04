@@ -5,20 +5,46 @@ import { ClientRouter } from "astro:transitions";
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
+  canonical?: string;
 }
 
 const {
-  title = "Victor Alberto",
-  description = "The personal site of software developer Victor Alberto",
+  title = "Victor Alberto - Software Developer",
+  description = "Victor Alberto - Software Developer | Portfolio showcasing innovative projects, technical expertise, and insights on software development. Explore my work and connect for collaborations.",
+  canonical,
 } = Astro.props;
+
+const determineCanonicalURL = () => {
+  if (Astro.url.host.includes("localhost")) return "http://localhost:4321";
+  return canonical || Astro.url.pathname;
+};
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 ---
 
+<title>{title}</title>
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
+<link rel="canonical" href={canonicalURL} />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
-<title>{title}</title>
-<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<meta
+  name="keywords"
+  content="Victor Alberto, software developer, web development, programming, coding, portfolio, projects, JavaScript, Python, React, Node.js, tech blog, open source, collaboration, software engineering, frontend, backend, fullstack, technology, software solutions, developer portfolio, coding projects, programming blog"
+/>
+
+<meta property="og:title" content={title} />
+<meta property="og:image" content="https://victormhp.dev/assets/profile.webp"/>
+<meta property="og:description" content={description} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content="Victor Alberto" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_MX" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="preconnect" href="https://cdn.victormhp.dev" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
