@@ -5,8 +5,8 @@ description: |
   Dynamic web application that empowers users to create and visualize epidemics on networks.
 tags:
   - Python
-  - Typescript
   - Flask
+  - Typescript
   - Svelte
   - D3
 img: /assets/eon.webp
