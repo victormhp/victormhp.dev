@@ -1,21 +1,38 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Subtitle from "../components/Subtitle.astro";
-import ProyectCard from "../components/ProjectCard.astro";
+import MainProjectCard from "../components/MainProjectCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("proyects");
+const mainProjects = projects.filter((p) => p.data.img);
+const otherProjects = projects.filter((p) => !p.data.img);
 ---
 
 <BaseLayout>
-  <main class="wrapper py-12 md:px-8 lg:gap-20" transition:animate="slide">
+  <main class="wrapper space-y-20 py-12 md:px-8 lg:gap-20" transition:animate="slide">
     <section>
       <Subtitle>Work</Subtitle>
       <ul class="flex flex-col gap-10 lg:gap-15">
         {
-          projects.map((p) => (
+          mainProjects.map((p) => (
             <li>
-              <ProyectCard project={p} />
+              <MainProjectCard project={p} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section class="flex flex-col gap-8">
+      <h3 class="font-recoleta relative w-full flex items-center text-center text-2xl whitespace-nowrap gap-4">
+        Other Noteworthy Projects
+      </h3>
+      <ul class="grid-responsive gap-6">
+        {
+          otherProjects.map((p) => (
+            <li>
+              <ProjectCard project={p} />
             </li>
           ))
         }
@@ -23,3 +40,13 @@ const projects = await getCollection("proyects");
     </section>
   </main>
 </BaseLayout>
+
+<style>
+  h3::before,
+  h3::after {
+    content: "";
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--color-gray-800);
+  }
+</style>

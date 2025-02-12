@@ -26,6 +26,8 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <link rel="canonical" href={canonicalURL} />
+<link href="assets/code-light.svg" rel="icon" media="(prefers-color-scheme: light)">
+<link href="assets/code-dark.svg" rel="icon" media="(prefers-color-scheme: dark)">
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <meta
