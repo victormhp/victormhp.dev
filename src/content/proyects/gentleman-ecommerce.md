@@ -1,4 +1,5 @@
 ---
+order: 4
 title: Gentleman Store
 subtitle: Personal Project
 description: |

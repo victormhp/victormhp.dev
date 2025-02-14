@@ -6,8 +6,10 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("proyects");
-const mainProjects = projects.filter((p) => p.data.img);
-const otherProjects = projects.filter((p) => !p.data.img);
+const mainProjects = projects
+  .filter((p) => p.data.order)
+  .sort((a, b) => a.data.order - b.data.order);
+const otherProjects = projects.filter((p) => !p.data.order);
 ---
 
 <BaseLayout>
@@ -25,7 +27,9 @@ const otherProjects = projects.filter((p) => !p.data.img);
       </ul>
     </section>
     <section class="flex flex-col gap-8">
-      <h3 class="font-recoleta relative w-full flex items-center text-center text-2xl whitespace-nowrap gap-4">
+      <h3
+        class="font-recoleta relative flex w-full items-center gap-4 text-center text-2xl whitespace-nowrap"
+      >
         Other Noteworthy Projects
       </h3>
       <ul class="grid-responsive gap-6">
