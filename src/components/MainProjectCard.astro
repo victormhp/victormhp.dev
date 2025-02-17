@@ -10,7 +10,7 @@ const { data }: Project = Astro.props.project;
   <div>
     <a href={data.deploy_url ?? data.github_url} target="_blank" rel="noopener noreferrer">
       <img
-        class="rounded border-2 border-zinc-800"
+        class="rounded border-2 border-gray-800"
         src={data.img}
         alt={data.img_alt}
         loading="lazy"
