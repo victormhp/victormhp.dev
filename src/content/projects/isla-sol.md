@@ -1,5 +1,5 @@
 ---
-order: 3
+section: "work"
 title: Isla Sol
 subtitle: Freelance Work
 description: |

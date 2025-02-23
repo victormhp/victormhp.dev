@@ -1,5 +1,5 @@
 ---
-order: 4
+section: "project"
 title: Gentleman Store
 subtitle: Personal Project
 description: |

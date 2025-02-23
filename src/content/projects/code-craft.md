@@ -1,5 +1,5 @@
 ---
-order: 2
+section: "project"
 title: Code Craft
 subtitle: Personal Project
 description: |

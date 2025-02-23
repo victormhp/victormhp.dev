@@ -5,17 +5,28 @@ import MainProjectCard from "../components/MainProjectCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("proyects");
-const mainProjects = projects
-  .filter((p) => p.data.order)
-  .sort((a, b) => a.data.order - b.data.order);
-const otherProjects = projects.filter((p) => !p.data.order);
+const projects = await getCollection("projects");
+const work = projects.filter((p) => p.data.section == "work");
+const mainProjects = projects.filter((p) => p.data.section == "project");
+const otherProjects = projects.filter((p) => p.data.section == "other");
 ---
 
 <BaseLayout>
   <main class="wrapper space-y-20 py-12 md:px-8 lg:gap-20" transition:animate="slide">
     <section>
       <Subtitle>Work</Subtitle>
+      <ul class="flex flex-col gap-10 lg:gap-15">
+        {
+          work.map((p) => (
+            <li>
+              <MainProjectCard project={p} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <Subtitle>Projects</Subtitle>
       <ul class="flex flex-col gap-10 lg:gap-15">
         {
           mainProjects.map((p) => (

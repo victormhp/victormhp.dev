@@ -1,4 +1,5 @@
 ---
+section: "other"
 title: Pern Notes
 subtitle: Personal Project
 description: |

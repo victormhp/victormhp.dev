@@ -1,4 +1,5 @@
 ---
+section: "other"
 title: WS Chat
 subtitle: Personal Project
 description: |

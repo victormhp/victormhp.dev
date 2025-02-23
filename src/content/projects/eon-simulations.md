@@ -1,5 +1,5 @@
 ---
-order: 1
+section: "work"
 title: EoN Simulations
 subtitle: INMEGEN - Internship
 description: |

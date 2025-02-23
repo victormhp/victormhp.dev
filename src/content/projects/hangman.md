@@ -1,4 +1,5 @@
 ---
+section: "other"
 title: Hangman
 subtitle: Personal Project
 description: |
