@@ -99,8 +99,8 @@
   box-shadow: 0 0.8rem 0 -0.4rem var(--color-regular);
 
   @media (min-width: 64em) {
-    border-bottom: 0.2rem solid var(--color-dark);
-    box-shadow: 0 0.4rem 0 -0.2rem var(--color-regular);
+    border-bottom: 0.3rem solid var(--color-dark);
+    box-shadow: 0 0.55rem 0 -0.3rem var(--color-regular);
   }
 }
 
