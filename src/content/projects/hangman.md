@@ -1,4 +1,5 @@
 ---
+order: 4
 section: "other"
 title: Hangman
 subtitle: Personal Project

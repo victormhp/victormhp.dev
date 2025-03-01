@@ -8,7 +8,9 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 const work = projects.filter((p) => p.data.section == "work");
 const mainProjects = projects.filter((p) => p.data.section == "project");
-const otherProjects = projects.filter((p) => p.data.section == "other");
+const otherProjects = projects
+  .filter((p) => p.data.section == "other")
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout>

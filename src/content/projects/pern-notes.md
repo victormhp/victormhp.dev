@@ -1,4 +1,5 @@
 ---
+order: 3
 section: "other"
 title: Pern Notes
 subtitle: Personal Project

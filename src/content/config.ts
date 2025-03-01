@@ -11,6 +11,7 @@ const projects = defineCollection({
     deploy_url: z.string().optional(),
     img: z.string().optional(),
     img_alt: z.string().optional(),
+    order: z.number().optional(),
   }),
 });
 
