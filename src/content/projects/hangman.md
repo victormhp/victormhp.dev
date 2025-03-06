@@ -2,7 +2,6 @@
 order: 4
 section: "other"
 title: Hangman
-subtitle: Personal Project
 description: |
   A word-guessing game where players try to reveal a hidden word by guessing one letter at a time.
 tags:

@@ -37,6 +37,10 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
   }
+
+  p {
+    text-wrap: pretty;
+  }
 }
 
 @utility wrapper {

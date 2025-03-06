@@ -6,39 +6,45 @@ import { type Project } from "../content/config";
 const { data }: Project = Astro.props.project;
 ---
 
-<div class="border-shadow relative flex h-full flex-col p-8">
-  <div class="flex h-full flex-col gap-8">
-    <header class="font-brand">
-      <p class="text-dark text-base">{data.subtitle}</p>
-      <h3 class="text-2xl text-gray-800">{data.title}</h3>
-    </header>
-    <main>
-      <p class="pb-4 text-base">{data.description}</p>
-      <div class="flex flex-wrap gap-2 text-sm">
-        {data.tags.map((t) => <Pill>{t}</Pill>)}
-      </div>
-    </main>
-    <footer class="mt-auto flex justify-end gap-2 text-xl">
+<article class="border-shadow relative flex h-full flex-col">
+  <div class="flex items-center justify-between pb-8">
+    <div>
+      <Icon icon="folder" color="#73162f" size="3em" />
+    </div>
+    <div class="flex gap-4">
       <a
-        class="hover:text-dark focus-visible:text-dark flex p-2 text-gray-800 transition-colors"
+        class="hover:text-dark transition-colors"
         href={data.github_url}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon icon="github" size="1.625em" />
+        <Icon icon="github" size="1.85em" />
       </a>
       {
         data.deploy_url ? (
           <a
-            class="hover:text-dark focus-visible:text-dark flex p-2 text-gray-800 transition-colors"
+            class="hover:text-dark transition-colors"
             href={data.deploy_url}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon icon="link" size="1.625em" />
+            <Icon icon="link" size="1.85em" />
           </a>
         ) : null
       }
+    </div>
+  </div>
+  <div class="flex h-full flex-col gap-4">
+    <header class="font-brand">
+      <h3 class="text-2xl text-gray-800">{data.title}</h3>
+    </header>
+    <main>
+      <p class="pb-4 text-base">{data.description}</p>
+    </main>
+    <footer class="mt-auto">
+      <div class="flex flex-wrap gap-2 text-sm">
+        {data.tags.map((t) => <Pill>{t}</Pill>)}
+      </div>
     </footer>
   </div>
-</div>
+</article>

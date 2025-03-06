@@ -3,7 +3,7 @@ section: "work"
 title: EoN Simulations
 subtitle: INMEGEN - Internship
 description: |
-  Dynamic web application that empowers users to create and visualize epidemics on networks.
+  A web application that lets users create, simulate, and visualize epidemic spread on networks, with real-time, interactive graphs and customizable parameters.
 tags:
   - Python
   - Flask

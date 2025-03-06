@@ -2,7 +2,6 @@
 order: 2
 section: "other"
 title: WS Chat
-subtitle: Personal Project
 description: |
   A real-time chat application leveraging WebSockets for instant messaging. 
 tags:

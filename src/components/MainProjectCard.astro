@@ -6,11 +6,11 @@ import { type Project } from "../content/config";
 const { data }: Project = Astro.props.project;
 ---
 
-<div class="border-shadow lg:grid lg:grid-cols-2 lg:items-center lg:gap-6">
+<article class="border-shadow lg:grid lg:grid-cols-2 lg:items-center lg:gap-6">
   <div>
     <a href={data.deploy_url ?? data.github_url} target="_blank" rel="noopener noreferrer">
       <img
-        class="rounded border-2 border-gray-800"
+        class="rounded border-2 border-gray-800 object-cover"
         src={data.img}
         alt={data.img_alt}
         loading="lazy"
@@ -52,4 +52,4 @@ const { data }: Project = Astro.props.project;
       }
     </footer>
   </div>
-</div>
+</article>
