@@ -2,7 +2,6 @@
   "name": "victor.dev",
   "type": "module",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,8 +11,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/tailwind": "^6.0.0",
-    "astro": "^5.2.5"
+    "astro": "^5.5.2"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.2.1",
