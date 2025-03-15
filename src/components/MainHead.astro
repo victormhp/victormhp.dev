@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title?: string | undefined;
@@ -26,8 +25,8 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <link rel="canonical" href={canonicalURL} />
-<link href="assets/code-light.svg" rel="icon" media="(prefers-color-scheme: light)">
-<link href="assets/code-dark.svg" rel="icon" media="(prefers-color-scheme: dark)">
+<link href="assets/code-light.svg" rel="icon" media="(prefers-color-scheme: light)" />
+<link href="assets/code-dark.svg" rel="icon" media="(prefers-color-scheme: dark)" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <meta
@@ -36,7 +35,7 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 />
 
 <meta property="og:title" content={title} />
-<meta property="og:image" content="https://victormhp.dev/assets/profile.webp"/>
+<meta property="og:image" content="https://victormhp.dev/assets/profile.webp" />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:site_name" content="Hi, I'm Victor" />
@@ -53,5 +52,3 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
   href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
   rel="stylesheet"
 />
-
-<ClientRouter />

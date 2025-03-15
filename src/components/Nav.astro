@@ -118,16 +118,11 @@ const currentPage = Astro.url.pathname;
         if (isMenuOpen()) {
           event.preventDefault();
           toggleMenu();
-          setTimeout(() => navigate(page), 200);
+          navigate(page);
         }
       });
     });
   }
-
-  document.addEventListener("astro:after-swap", () => {
-    initLogoBehavior();
-    initMobileMenu();
-  });
 
   initLogoBehavior();
   initMobileMenu();
