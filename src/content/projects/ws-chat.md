@@ -3,7 +3,7 @@ order: 2
 section: "other"
 title: WS Chat
 description: |
-  A real-time chat application leveraging WebSockets for instant messaging. 
+  A real-time chat application leveraging WebSockets for instant messaging.
 tags:
   - Go
   - Javascript
