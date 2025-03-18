@@ -40,7 +40,7 @@ const page = Astro.url.pathname;
           <li
             class:list={[
               "page transition-all",
-              href == page ? "underline-lift hover" : "hover:underline-lift",
+              page.includes(href) ? "underline-lift" : "hover:underline-lift",
             ]}
           >
             <a class="link text-gray-800" {href}>
