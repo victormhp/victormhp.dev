@@ -2,6 +2,8 @@
 import Icon from "./Icon.astro";
 import Resume from "./Resume.astro";
 import { socialsArray, pages } from "../config.ts";
+
+const page = Astro.url.pathname;
 ---
 
 <nav
@@ -35,7 +37,12 @@ import { socialsArray, pages } from "../config.ts";
     >
       {
         pages.map(({ label, href }) => (
-          <li class="page hover:underline-lift focus-visible:underline-lift transition-all">
+          <li
+            class:list={[
+              "page transition-all",
+              href == page ? "underline-lift hover" : "hover:underline-lift",
+            ]}
+          >
             <a class="link text-gray-800" {href}>
               {label}
             </a>
@@ -67,17 +74,6 @@ import { socialsArray, pages } from "../config.ts";
 </nav>
 
 <script>
-  function navMenuActive() {
-    const pages = document.querySelectorAll(".page");
-    for (const p of pages) {
-      const href = p.querySelector("a").getAttribute("href");
-      const pathname = window.location.pathname;
-      if (pathname.includes(href)) {
-        p.classList.add("underline-lift");
-      }
-    }
-  }
-
   function isMenuOpen() {
     return document.body.getAttribute("data-menu-open") == "true";
   }
@@ -121,7 +117,6 @@ import { socialsArray, pages } from "../config.ts";
 
   initLogoBehavior();
   initMobileMenu();
-  navMenuActive();
 </script>
 
 <style>
