@@ -10,6 +10,7 @@ export default defineConfig({
   compressHTML: true,
   prefetch: true,
   vite: { plugins: [tailwindcss()] },
+  site: "https://victormhp.dev/",
   integrations: [sitemap()],
   devToolbar: {
     enabled: false,
