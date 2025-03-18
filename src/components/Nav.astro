@@ -108,14 +108,8 @@ import { socialsArray, pages } from "../config.ts";
     btn.addEventListener("click", () => toggleMenu());
 
     navLinks.forEach((link) => {
-      const page = link.getAttribute("href");
-      link.addEventListener("click", (event) => {
-        if (page == window.location.pathname) {
-          event.preventDefault();
-        }
-
+      link.addEventListener("click", () => {
         if (isMenuOpen()) {
-          event.preventDefault();
           toggleMenu();
         }
       });
