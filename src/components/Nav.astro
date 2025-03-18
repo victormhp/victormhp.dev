@@ -3,7 +3,7 @@ import Icon from "./Icon.astro";
 import Resume from "./Resume.astro";
 import { socialsArray, pages } from "../config.ts";
 
-const currentPage = Astro.url.pathname;
+const currentPage = new URL(Astro.request.url).pathname;
 ---
 
 <nav
@@ -49,9 +49,9 @@ const currentPage = Astro.url.pathname;
           </li>
         ))
       }
-      <div>
+      <li>
         <Resume>Resume</Resume>
-      </div>
+      </li>
     </ul>
     <div
       class="flex justify-around gap-4 border-t-2 border-gray-800 bg-gray-50 p-4 text-2xl md:hidden"
