@@ -69,8 +69,9 @@ import { socialsArray, pages } from "../config.ts";
 <script>
   const pages = document.querySelectorAll(".page");
   for (const p of pages) {
-    const link = p.querySelector("a").href;
-    if (link == window.location.href) {
+    const href = p.querySelector("a").getAttribute("href");
+    const pathname = window.location.pathname;
+    if (pathname.includes(href)) {
       p.classList.add("underline-lift");
     }
   }
