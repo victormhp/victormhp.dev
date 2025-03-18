@@ -67,16 +67,18 @@ import { socialsArray, pages } from "../config.ts";
 </nav>
 
 <script>
-  const pages = document.querySelectorAll(".page");
-  for (const p of pages) {
-    const href = p.querySelector("a").getAttribute("href");
-    const pathname = window.location.pathname;
-    if (pathname.includes(href)) {
-      p.classList.add("underline-lift");
+  function navMenuActive() {
+    const pages = document.querySelectorAll(".page");
+    for (const p of pages) {
+      const href = p.querySelector("a").getAttribute("href");
+      const pathname = window.location.pathname;
+      if (pathname.includes(href)) {
+        p.classList.add("underline-lift");
+      }
     }
   }
 
-  function isMenuOpen(): boolean {
+  function isMenuOpen() {
     return document.body.getAttribute("data-menu-open") == "true";
   }
 
@@ -119,6 +121,7 @@ import { socialsArray, pages } from "../config.ts";
 
   initLogoBehavior();
   initMobileMenu();
+  navMenuActive();
 </script>
 
 <style>
