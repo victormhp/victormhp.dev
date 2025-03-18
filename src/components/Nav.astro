@@ -2,8 +2,6 @@
 import Icon from "./Icon.astro";
 import Resume from "./Resume.astro";
 import { socialsArray, pages } from "../config.ts";
-
-const currentPage = new URL(Astro.request.url).pathname;
 ---
 
 <nav
@@ -37,12 +35,7 @@ const currentPage = new URL(Astro.request.url).pathname;
     >
       {
         pages.map(({ label, href }) => (
-          <li
-            class:list={[
-              "hover:underline-lift focus-visible:underline-lift transition-all",
-              currentPage == href ? "underline-lift" : "",
-            ]}
-          >
+          <li class="page hover:underline-lift focus-visible:underline-lift transition-all">
             <a class="link text-gray-800" {href}>
               {label}
             </a>
@@ -74,7 +67,13 @@ const currentPage = new URL(Astro.request.url).pathname;
 </nav>
 
 <script>
-  import { navigate } from "astro:transitions/client";
+  const pages = document.querySelectorAll(".page");
+  for (const p of pages) {
+    const link = p.querySelector("a").href;
+    if (link == window.location.href) {
+      p.classList.add("underline-lift");
+    }
+  }
 
   function isMenuOpen(): boolean {
     return document.body.getAttribute("data-menu-open") == "true";
@@ -118,7 +117,6 @@ const currentPage = new URL(Astro.request.url).pathname;
         if (isMenuOpen()) {
           event.preventDefault();
           toggleMenu();
-          navigate(page);
         }
       });
     });
