@@ -36,5 +36,6 @@ type Page = {
 export const pages: Page[] = [
   { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];

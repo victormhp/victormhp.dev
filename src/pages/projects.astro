@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Subtitle from "../components/Subtitle.astro";
+import MainProjectCard from "../components/MainProjectCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const mainProjects = projects.filter((p) => p.data.section == "project");
+const otherProjects = projects
+  .filter((p) => p.data.section == "other")
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout>
+  <main class="wrapper space-y-24 py-12 md:px-8 lg:gap-20" transition:animate="slide">
+    <section>
+      <Subtitle>Projects</Subtitle>
+      <ul class="flex flex-col gap-10 lg:gap-15">
+        {
+          mainProjects.map((p) => (
+            <li>
+              <MainProjectCard project={p} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section class="flex flex-col gap-8">
+      <h3
+        class="font-recoleta relative flex w-full items-center gap-4 text-center text-2xl whitespace-nowrap lg:text-3xl"
+      >
+        Other Noteworthy Projects
+      </h3>
+      <ul class="grid-responsive gap-6">
+        {
+          otherProjects.map((p) => (
+            <li>
+              <ProjectCard project={p} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  h3::before,
+  h3::after {
+    content: "";
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--color-gray-800);
+  }
+</style>

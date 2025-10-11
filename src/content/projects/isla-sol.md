@@ -1,5 +1,5 @@
 ---
-section: "work"
+section: "project"
 title: Isla Sol
 subtitle: Freelance Work
 description: |

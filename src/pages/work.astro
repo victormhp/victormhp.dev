@@ -1,16 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Subtitle from "../components/Subtitle.astro";
-import MainProjectCard from "../components/MainProjectCard.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import WorkCard from "../components/WorkCard.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("projects");
-const work = projects.filter((p) => p.data.section == "work");
-const mainProjects = projects.filter((p) => p.data.section == "project");
-const otherProjects = projects
-  .filter((p) => p.data.section == "other")
-  .sort((a, b) => a.data.order - b.data.order);
+const work = await getCollection("work");
 ---
 
 <BaseLayout>
@@ -19,37 +13,9 @@ const otherProjects = projects
       <Subtitle>Work</Subtitle>
       <ul class="flex flex-col gap-10 lg:gap-15">
         {
-          work.map((p) => (
+          work.map((w) => (
             <li>
-              <MainProjectCard project={p} />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-    <section>
-      <Subtitle>Projects</Subtitle>
-      <ul class="flex flex-col gap-10 lg:gap-15">
-        {
-          mainProjects.map((p) => (
-            <li>
-              <MainProjectCard project={p} />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-    <section class="flex flex-col gap-8">
-      <h3
-        class="font-recoleta relative flex w-full items-center gap-4 text-center text-2xl whitespace-nowrap lg:text-3xl"
-      >
-        Other Noteworthy Projects
-      </h3>
-      <ul class="grid-responsive gap-6">
-        {
-          otherProjects.map((p) => (
-            <li>
-              <ProjectCard project={p} />
+              <WorkCard work={w} />
             </li>
           ))
         }
