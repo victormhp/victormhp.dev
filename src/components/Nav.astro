@@ -95,6 +95,7 @@ const page = Astro.url.pathname;
 
     const toggleMenu = () => {
       const isOpen = isMenuOpen();
+      console.log(isOpen)
       const menuState = isOpen ? "false" : "true";
 
       document.body.setAttribute("data-menu-open", menuState);
@@ -117,6 +118,9 @@ const page = Astro.url.pathname;
 
   initLogoBehavior();
   initMobileMenu();
+
+  document.addEventListener("DOMContentLoaded",initMobileMenu);
+  document.addEventListener("astro:page-load", initMobileMenu);
 </script>
 
 <style>

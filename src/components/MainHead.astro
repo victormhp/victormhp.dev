@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 
+import { ClientRouter } from "astro:transitions";
+
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
@@ -45,6 +47,8 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
+
+<ClientRouter />
 
 <link rel="preconnect" href="https://cdn.victormhp.dev" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
